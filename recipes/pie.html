@@ -5,19 +5,240 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Home page of Mirai's personal site" />
+
+    <style>
+        * {
+            background-color: #3d3d4e;
+            font-family: verdana;
+        }
+
+        h1,
+        h2,
+        p,
+        ol {
+            color: #FFFFFF;
+        }
+
+        h1, h2 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+
+        .pie {
+            width: 30vw;
+            height: auto;
+        }
+
+        .ingredients {
+            display: inline-block;
+            width: 40vw;
+            height: 80vh;
+            background-color: #FFFFFF;
+            border-radius: 20px;
+        }
+
+        .ingredients h2 {
+            background-color: #FFFFFF;
+            text-align: center;
+        }
+
+        input {
+            border-radius: 30px;
+        }
+
+        .container {
+            display: block;
+            position: relative;
+            padding-left: 45px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 20px;
+            background-color: #FFFFFF;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .checkmark {
+            position: absolute;
+            border-radius: 20px;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #FFFFFF;
+            outline: 10px black;
+            border: 10px #6c6c91;
+            margin-left: 10px;
+        }
+
+        input~.checkmark {
+            outline: 2px solid #6d6d77;
+        }
+
+        .container:hover input~.checkmark {
+            background-color: #ccc;
+        }
+
+        .container input:checked~.checkmark {
+            background-color: #2196F3;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .container input:checked~.checkmark:after {
+            display: block;
+        }
+
+        .container .checkmark:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    </style>
 </head>
 
-</html>
 
 <body>
-    <h1>Mixed Berry Pie</h1>
-    <h3>Description</h3>
-    <h3>Ingredients</h3>
-    <ul>
-        <li> homemade pie crust for a 9'' deep dish pan. This recipe makes 2 crusts: one for the bottom and one for the to</li>
-        <li> 7 cups fresh or frozen raspberries, blueberries and blackberries about 2 1/3 cups of each type of berry</li>
-        <li>1 cup granulated sugar (plus a little exstr</li>
-    </ul>
-    <h3>Steps</h3>
+    <header>
+        <h1>Mixed Berry Pie</h1>
+        <p> You just can’t beat this easy and delicious homemade Triple Berry Pie! It holds together perfectly every
+            single
+            time, and you can use fresh or frozen blueberries, raspberries and blackberries.</p>
+        <img src="../media/pie.jpg" alt="Berry Pie" class="pie">
 
+    </header>
+    <main>
+        <div class="ingredients">
+            <h2>Ingredients</h2>
+            <label class="container"><input type="checkbox" name="ingredient"> homemade pie crust for a 9'' deep dish
+                pan. This recipe makes 2 crusts: one for the bottom and one for
+                the
+                to <span class="checkmark"></span></label>
+            <label class="container"><input type="checkbox" name="ingredient"> 2 1/3 cups fresh or frozen raspberries
+                <span class="checkmark"></span></label>
+            <label class="container"><input type="checkbox" name="ingredient"> 2 1/3 cups fresh or frozen blueberries
+                <span class="checkmark"></span></label>
+            <label class="container"><input type="checkbox" name="ingredient"> 2 1/3 cups fresh or frozen blackberries
+                <span class="checkmark"></span></label>
+            <label class="container"><input type="checkbox" name="ingredient">1 cup granulated sugar (plus a little
+                exstr <span class="checkmark"></span></label>
+            <label class="container"><input type="checkbox" name="ingredient">1 tablespoon lemon juice <span
+                    class="checkmark"></span></label>
+            <label class="container"><input type="checkbox" name="ingredient">4 tablespoons cornstarch<span
+                    class="checkmark"></span></label>
+            <label class="container"><input type="checkbox" name="ingredient">2 tablespoons butter<span
+                    class="checkmark"></span></label>
+            <label class="container"><input type="checkbox" name="ingredient">1 large egg white beaten with a fork<span
+                    class="checkmark"></span></label>
+        </div>
+
+        <div class="instructions">
+            <h2>Instructions</h2>
+            <ol>
+                <li><strong>Cook berries:</strong> Add berries, sugar and lemon juice to a large saucepan over medium
+                    heat.
+                </li>
+                <li>Simmer, until warm and juicy, about 5-10 minutes, gently stirring occasionally. (You can taste it at
+                    this
+                    point and see if it's sweet enough for your liking. I don't like to make mine too sweet, but if you
+                    want
+                    it
+                    sweeter you can add ¼ cup more sugar.)
+                </li>
+                <li><strong>Thicken filling:</strong> Spoon out about ½ cup of the juice from the pan into a bowl. Stir
+                    cornstarch into the juice until smooth.
+                </li>
+                <li>Bring pot of berries back to a simmer and slowly pour in the cornstarch. Gently stir mixture (being
+                    careful
+                    not to mash the berries), until thickened, about 2-5 minutes.
+                </li>
+                <li><strong>Cool and add to pie shell.</strong> Remove from heat and stir in the butter. Allow to cool
+                    for
+                    15
+                    minutes. Pour mixture into unbaked pie shell (in a 9 in deep dish pan).
+                </li>
+                <li><strong>Add lattice top</strong> or a whole top with holes pricked on top for steam to escape. (See
+                    directions for lattice crust below).
+                </li>
+                <li>Pinch the edges of the top and bottom pie crusts together and crimp the edge, if you like. Brush a
+                    thin
+                    layer of beaten egg white over the top of the pie and sprinkle lightly with sugar.
+                </li>
+                <li><strong>Bake</strong> at 400 degrees F for 40-45 minutes. Check it after about 25 minutes and place
+                    a
+                    piece
+                    of tinfoil over it if the top crust is getting too brown.
+                </li>
+                <li>Remove to a wire cooling rack and allow to cool for several hours. Once cooled completely, you can
+                    cut
+                    into
+                    it or cover it and refrigerate it overnight to serve the next day.
+                </li>
+            </ol>
+
+            <h2>For the lattice crust:</h2>
+            <ol>
+                <li><strong>Roll out crust.</strong> Roll our your crust on a lightly floured counter or on a piece of
+                    parchment
+                    paper. (I like to place a piece of parchment paper on top of a damp kitchen towel to keep it from
+                    moving
+                    around). Roll the pie crust into a large circle that's about 1-2 inches larger than then top edge of
+                    your
+                    pie dish.
+                </li>
+                <li><strong>Cut strips.</strong> Use a pizza cutter to strips. cut them as wide as you'd like them to be
+                    (there's really no right or wrong way).
+                </li>
+                <li><strong>Lay first layer of strips.</strong> Lay your longest strip across the middle of the pie then
+                    lay
+                    a
+                    few shorter strips on either side, parallel to each other and spaced evenly.
+                </li>
+                <li><strong>Fold pack even numbered strips.</strong> Fold back the second and 4th strip and lay a
+                    shorter
+                    strip
+                    of dough perpendicular to other dough strips. Unfold those dough strips over the new strip.
+                </li>
+                <li><strong>Fold back odd numbered strips:</strong> Fold back the first, third and fifth strips in the
+                    same
+                    direction and lay another dough strip across the pie. Unfold the first, third and fifth strips over
+                    the
+                    new
+                    strip.
+                </li>
+                <li><strong>Repeat</strong> steps 4 and 5 until pie is covered with a lattice crust.
+                </li>
+                <li><strong>Trim dough strips.</strong> If you dough strips hang over the edge of the pie, trim them to
+                    the
+                    edge.
+                </li>
+                <li><strong>Pinch crusts together.</strong> Pinch the lattice top with the bottom crust to form one
+                    unified
+                    outer edge. Crimp edges.
+                </li>
+            </ol>
+        </div>
+    </main>
 </body>
+
+</html>
