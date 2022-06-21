@@ -17,7 +17,7 @@
             text-align: center;
             font-size: 2.5em;
         }
-        
+
         .patrick {
             display: block;
             margin-left: auto;
@@ -32,16 +32,62 @@
         }
 
         a {
-            display: flex;
-            flex-direction: column;
             text-align: center;
             text-decoration: none;
+            width: 20vw;
+            margin-bottom: 10px;
         }
 
         img {
             width: 20vw;
             height: auto;
             padding-bottom: 10px;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .patrick {
+                width: 65vw;
+            }
+
+            .container {
+                -display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+
+            }
+
+            a {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 60vw;
+            }
+
+        }
+
+        @media only screen and (min-width: 2000px) {
+            .title {
+                font-size: 2.8em;
+            }
+
+            .patrick {
+                width: 25vw;
+            }
+
+            img {
+                width: 18vw;
+            }
+
+            a {
+                width: 18vw;
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
@@ -51,10 +97,13 @@
     <img src="./media/patrickEating.gif" alt="Patrick Star Inhaling Burgers" class="patrick">
 
     <div class="container">
-        <a href="./recipes/cookie.html"><img src="./media/spongebobCookie.png" alt="Spongebob surrounded by cookies">Snickerdoodle
+        <a href="./recipes/cookie.html"><img src="./media/spongebobCookie.png"
+                alt="Spongebob surrounded by cookies">Snickerdoodle
             Cookie</a>
-        <a href="./recipes/pie.html"><img src="./media/spongebobPie.jpg" alt="Spongebob holding a pie" class="">Mixed Berry Pie</a>
-        <a href="./recipes/cake.html"><img src="./media/spongebobCake.jpg" alt="Spongebob cake">Hershey's "Perfectly Chocolate"
+        <a href="./recipes/pie.html"><img src="./media/spongebobPie.jpg" alt="Spongebob holding a pie" class="">Mixed
+            Berry Pie</a>
+        <a href="./recipes/cake.html"><img src="./media/spongebobCake.jpg" alt="Spongebob cake">Hershey's "Perfectly
+            Chocolate"
             Chocolate Cake</a>
     </div>
 </body>
