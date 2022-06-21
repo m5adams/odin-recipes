@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Home page of Mirai's personal site" />
+
+    <style>
+        * {
+            background-color: #8ba6ca;
+            font-family: verdana;
+        }
+
+        h1,
+        h2,
+        p,
+        ol {
+            color: #212121;
+        }
+
+        h1,
+        h2 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        header {
+            padding-left: 15vw;
+            padding-right: 15vw;
+        }
+
+        .title {
+            padding-top: 5vh;
+            text-align: center;
+            font-size: 3em;
+        }
+
+        .cake {
+            padding-top: 20px;
+            width: 20vw;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .description {
+            display: inline-block;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        main {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-evenly;
+        }
+
+        .ingredients {
+            display: inline-block;
+            width: 30vw;
+            max-height: 600px;
+            min-width: 220px;
+            background-color: #FFFFFF;
+            border-radius: 20px;
+        }
+
+        .ingredients h2 {
+            background-color: #FFFFFF;
+            text-align: center;
+            color: #212121;
+        }
+
+        input {
+            border-radius: 30px;
+        }
+
+        .container {
+            display: block;
+            position: relative;
+            padding-left: 45px;
+            margin-bottom: 12px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 20px;
+            background-color: #FFFFFF;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .checkmark {
+            position: absolute;
+            border-radius: 20px;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #FFFFFF;
+            outline: 10px black;
+            border: 10px #6c6c91;
+            margin-left: 10px;
+        }
+
+        input~.checkmark {
+            outline: 2px solid #6d6d77;
+        }
+
+        .container:hover input~.checkmark {
+            background-color: #ccc;
+        }
+
+        .container input:checked~.checkmark {
+            background-color: #2196F3;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .container input:checked~.checkmark:after {
+            display: block;
+        }
+
+        .container .checkmark:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .instructions {
+            width: 50vw;
+            line-height: 1.6em;
+            height: auto;
+        }
+
+        .instructions h2 {
+            text-align: center;
+            font-size: 1.8em;
+        }
+
+        .instructions li {
+            font-size: 1.2em;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            header {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .title {
+                font-size: 2em;
+            }
+
+            .cake {
+                width: 65vw;
+            }
+
+            main {
+                flex-direction: column;
+            }
+
+            .ingredients {
+                display: inline-block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 90vw;
+            }
+
+            .container {
+                font-size: 1em;
+            }
+
+            .checkmark {
+                width: 20px;
+                height: 20px;
+            }
+
+            .instructions {
+                width: 100%;
+            }
+
+            .instructions li {
+                font-size: 1.1em;
+            }
+        }
+
+        @media only screen and (min-width: 2000px) {
+            .title {
+                font-size: 3.2em;
+            }
+
+            header {
+                padding-left: 25vw;
+                padding-right: 25vw;
+            }
+
+            .description {
+                font-size: 2em;
+            }
+
+            .instructions h2 {
+                font-size: 2.5em;
+            }
+
+            .instructions li {
+                font-size: 2em;
+                line-height: 2.2em;
+            }
+
+            .ingredients {
+                max-height: 700px;
+            }
+
+            .ingredients h2 {
+                font-size: 2.5em;
+            }
+
+            .container {
+                font-size: 1.8em;
+                padding-left: 48px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <h1 class="title">Snickerdoodle Cookies</h1>
+        <p class="description">The Best Snickerdoodle Cookie Recipe. Soft and Chewy Snickerdoodle Cookies. The popular
+            cinnamon-sugar soft and chewy sugar cookie recipe. A recipe that has been in the family for over 30 years!
+        </p>
+        <img src="../media/snickerdoodle.jpg" alt="Chocolate Cake" class="cake">
+    </header>
+    <main>
+        <div class="ingredients">
+            <h2>Ingredients</h2>
+            <label class="container"><input type="checkbox" name="ingredient"> 1 cup unsalted butter
+                <span class="checkmark"></span></label>
+            <label class="container"><input type="checkbox" name="ingredient"> 1 3/4 cups sugar
+                <span class="checkmark"></span></label>
+            <label class="container"><input type="checkbox" name="ingredient"> 2 large eggs
+                <span class="checkmark"></span></label>
+            <label class="container"><input type="checkbox" name="ingredient">2 teaspoons vanilla<span
+                    class="checkmark"></span></label>
+            <label class="container"><input type="checkbox" name="ingredient">2 3/4 cup flour <span
+                    class="checkmark"></span></label>
+            <label class="container"><input type="checkbox" name="ingredient">1 cup milk<span
+                    class="checkmark"></span></label>
+            <label class="container"><input type="checkbox" name="ingredient">1 teaspoon salt<span
+                    class="checkmark"></span></label>
+            <label class="container"><input type="checkbox" name="ingredient">1/2 tsp baking soda<span
+                    class="checkmark"></span></label>
+            <label class="container"><input type="checkbox" name="ingredient">1 1/2 tsp cream of tartar<span
+                    class="checkmark"></span></label>
+            <label class="container"><input type="checkbox" name="ingredient">1 1/2 tablespoons cinnamon<span
+                    class="checkmark"></span></label>
+        </div>
+
+        <div class="instructions">
+            <h2>Instructions</h2>
+            <ol>
+                <li>Preheat oven to 350 degrees.
+                </li>
+                <li>In a large mixing bowl, cream butter and 1 1/2 cups of the sugar for 4-5 minutes until light and fluffy.  Scrape the sides of the bowl and add the eggs and vanilla. Cream for 1-2 minutes longer. 
+
+                </li>
+                <li>Stir in flour, cream of tartar, baking soda, and salt, just until combined. 
+
+                </li>
+
+                <li>In a small bowl, stir together sugar and cinnamon. 
+                </li>
+                <li>If time allows, wrap the dough and let refrigerate for 20-30 minutes.  Roll into small balls until round and smooth.  Drop into the cinnamon-sugar mixture and coat well. Using a spoon, coat for a second time, ensuring the cookie balls are completely covered.  *To make flatter snickerdoodles, press down in the center of the ball before placing in the oven. This helps to keep them from puffing up in the middle. *
+                </li>
+                <li>Place on a parchment paper-lined baking sheet. Bake for 9-11 minutes.  Let cool for several minutes on baking sheet before removing from the pan.  
+                </li>
+            </ol>
+        </div>
+    </main>
+</body>
+
+</html>
